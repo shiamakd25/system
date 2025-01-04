@@ -12,7 +12,9 @@ run = True
 
 while run:
     screen.fill((0, 0, 0))
-
+    pygame.draw.circle(
+        screen, pygame.Color("Gold"), (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2), 100
+    )
     pygame.display.flip()
 
     for event in pygame.event.get():
