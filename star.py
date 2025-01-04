@@ -1,3 +1,3 @@
 class Star:
     def __init__(self):
-        pass
+        self.mass = 1
