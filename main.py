@@ -11,8 +11,12 @@ pygame.display.set_caption("Solar System")
 run = True
 
 while run:
+    screen.fill((0, 0, 0))
+
+    pygame.display.flip()
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    
+
 pygame.quit()
