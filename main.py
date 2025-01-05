@@ -3,8 +3,12 @@ from star import *
 
 pygame.init()
 
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 600
+SCREEN_INFO = pygame.display.Info()
+SCREEN_WIDTH = SCREEN_INFO.current_w
+SCREEN_HEIGHT = SCREEN_INFO.current_h - 96
+
+CONTROL_PANEL_WIDTH = 0.2 * SCREEN_WIDTH
+CONTROL_PANEL_HEIGHT = SCREEN_HEIGHT
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Solar System")
