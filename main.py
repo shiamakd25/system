@@ -1,19 +1,19 @@
-import pygame
+import pygame as pg
 from star import *
 
-pygame.init()
+pg.init()
 
-SCREEN_INFO = pygame.display.Info()
+SCREEN_INFO = pg.display.Info()
 SCREEN_WIDTH = SCREEN_INFO.current_w
 SCREEN_HEIGHT = SCREEN_INFO.current_h - 96
 
 CONTROL_PANEL_WIDTH = 0.25 * SCREEN_WIDTH
 CONTROL_PANEL_HEIGHT = SCREEN_HEIGHT
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Solar System")
+screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pg.display.set_caption("Solar System")
 
-control_panel = pygame.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
+control_panel = pg.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
 
 star = Star("Gold")
 
@@ -23,16 +23,16 @@ while run:
     screen.fill((0, 0, 0))
     control_panel.fill((100, 100, 100))
     screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
-    pygame.draw.circle(
+    pg.draw.circle(
         screen,
-        pygame.Color(star.color),
+        pg.Color(star.color),
         (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),
         50 * star.mass,
     )
-    pygame.display.flip()
+    pg.display.flip()
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
             run = False
 
-pygame.quit()
+pg.quit()
