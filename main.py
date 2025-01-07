@@ -15,7 +15,7 @@ pg.display.set_caption("Solar System")
 
 control_panel = pg.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
 
-star = Star((128, 128, 0))
+star = Star((255, 228, 0))
 
 run = True
 
@@ -25,9 +25,9 @@ while run:
     screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
     pg.draw.circle(
         screen,
-        pg.Color(tuple(val / 2 for val in star.color)),
+        pg.Color(tuple(val * star.brightness / 100 for val in star.color)),
         (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),
-        60 * star.mass,
+        40 * star.mass + star.brightness,
     )
     pg.draw.circle(
         screen,
