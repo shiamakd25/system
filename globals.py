@@ -1,5 +1,7 @@
 import pygame as pg
 
+pg.init()
+
 SCREEN_INFO = pg.display.Info()
 SCREEN_WIDTH = SCREEN_INFO.current_w
 SCREEN_HEIGHT = SCREEN_INFO.current_h - 96
