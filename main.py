@@ -15,9 +15,18 @@ mass_slider = Slider(
     (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100),
     225,
     25,
-    15,
-    20,
+    0,
+    300,
     "Star Mass (Solar Mass)",
+)
+
+brightness_slider = Slider(
+    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 150),
+    225,
+    25,
+    0,
+    100,
+    "Star Brightness (%)",
 )
 
 star = Star((255, 228, 0))
@@ -41,6 +50,7 @@ while run:
         50 * star.mass,
     )
     mass_slider.draw(screen)
+    brightness_slider.draw(screen)
     pg.display.flip()
 
     for event in pg.event.get():
