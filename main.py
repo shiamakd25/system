@@ -1,5 +1,6 @@
 import pygame as pg
 from star import *
+from ui import *
 
 pg.init()
 
@@ -14,6 +15,10 @@ screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pg.display.set_caption("Solar System")
 
 control_panel = pg.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
+
+mass_slider = Slider(
+    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100), 225, 25, 15, 20, "Star Mass (M☉)"
+)
 
 star = Star((255, 228, 0))
 
@@ -35,6 +40,7 @@ while run:
         (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),
         50 * star.mass,
     )
+    mass_slider.draw(screen)
     pg.display.flip()
 
     for event in pg.event.get():
