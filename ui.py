@@ -1,4 +1,5 @@
 import pygame as pg
+from globals import *
 
 
 class Slider:
@@ -11,6 +12,9 @@ class Slider:
         max_val: int,
         title: str,
     ):
+        self.pos = pos
+        self.width = width
+        self.height = height
         self.rect = pg.Rect(pos[0] - width / 2, pos[1] - height / 2, width, height)
         self.min = min_val
         self.max = max_val
@@ -25,6 +29,11 @@ class Slider:
         self.title = title
 
     def draw(self, screen):
+        slider_desc = FONT.render(self.title, True, pg.Color(0, 0, 0))
+        screen.blit(
+            slider_desc,
+            (self.pos[0] - 0.5 * self.width, self.pos[1] - 1.5 * self.height),
+        )
         pg.draw.rect(screen, pg.Color(255, 255, 255), self.rect)
         pg.draw.circle(
             screen,
