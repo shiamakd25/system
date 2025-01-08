@@ -12,7 +12,12 @@ pg.display.set_caption("Solar System")
 control_panel = pg.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
 
 mass_slider = Slider(
-    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100), 225, 25, 15, 20, "Star Mass (M☉)"
+    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100),
+    225,
+    25,
+    15,
+    20,
+    "Star Mass (Solar Mass)",
 )
 
 star = Star((255, 228, 0))
