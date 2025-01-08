@@ -40,13 +40,13 @@ while run:
     pg.draw.circle(
         screen,
         pg.Color(tuple(val * star.brightness / 100 for val in star.color)),
-        (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),
+        (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
         40 * star.mass + star.brightness,
     )
     pg.draw.circle(
         screen,
         pg.Color(star.color),
-        (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),
+        (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
         50 * star.mass,
     )
     mass_slider.draw(screen)
