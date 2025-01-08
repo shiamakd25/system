@@ -1,15 +1,10 @@
 import pygame as pg
+from globals import *
 from star import *
 from ui import *
 
 pg.init()
 
-SCREEN_INFO = pg.display.Info()
-SCREEN_WIDTH = SCREEN_INFO.current_w
-SCREEN_HEIGHT = SCREEN_INFO.current_h - 96
-
-CONTROL_PANEL_WIDTH = 0.25 * SCREEN_WIDTH
-CONTROL_PANEL_HEIGHT = SCREEN_HEIGHT
 
 screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pg.display.set_caption("Solar System")
