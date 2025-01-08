@@ -26,10 +26,13 @@ class Slider:
             self.knob_size,
             self.knob_size,
         )
+        self.value = 17
         self.title = title
 
     def draw(self, screen):
-        slider_desc = FONT.render(self.title, True, pg.Color(0, 0, 0))
+        slider_desc = FONT.render(
+            f"{self.title}: {self.value}", True, pg.Color(0, 0, 0)
+        )
         screen.blit(
             slider_desc,
             (self.pos[0] - 0.5 * self.width, self.pos[1] - 1.5 * self.height),
