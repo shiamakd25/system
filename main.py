@@ -13,17 +13,17 @@ control_panel = pg.Surface((CONTROL_PANEL_WIDTH, CONTROL_PANEL_HEIGHT))
 
 mass_slider = Slider(
     (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100),
-    225,
-    25,
+    SLIDER_WIDTH,
+    SLIDER_HEIGHT,
     0,
     300,
     "Star Mass (Solar Mass)",
 )
 
 brightness_slider = Slider(
-    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 150),
-    225,
-    25,
+    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 175),
+    SLIDER_WIDTH,
+    SLIDER_HEIGHT,
     0,
     100,
     "Star Brightness (%)",
