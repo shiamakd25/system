@@ -21,7 +21,7 @@ mass_slider = Slider(
 )
 
 brightness_slider = Slider(
-    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 175),
+    (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 200),
     SLIDER_WIDTH,
     SLIDER_HEIGHT,
     0,

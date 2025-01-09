@@ -44,3 +44,13 @@ class Slider:
             self.knob_bounding_box.center,
             self.knob_size / 2,
         )
+        slider_min = FONT.render(str(self.min), True, pg.Color(0, 0, 0))
+        screen.blit(
+            slider_min,
+            (self.pos[0] - 0.5 * self.width, self.pos[1] + 0.8 * self.height),
+        )
+        slider_max = FONT.render(str(self.max), True, pg.Color(0, 0, 0))
+        screen.blit(
+            slider_max,
+            (self.pos[0] + 0.5 * self.width, self.pos[1] + 0.8 * self.height),
+        )
