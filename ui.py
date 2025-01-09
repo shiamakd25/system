@@ -60,12 +60,11 @@ class Slider:
         if event.type == pg.MOUSEBUTTONDOWN:
             if self.knob_bounding_box.collidepoint(event.pos):
                 self.dragging = True
-        else:
+        elif event.type == pg.MOUSEBUTTONUP:
             self.dragging = False
 
         if event.type == pg.MOUSEMOTION and self.dragging:
             mouse_x, _ = event.pos
-
             if mouse_x < self.pos[0] - 0.5 * self.width:
                 setattr(self.knob_bounding_box, "left", self.pos[0] - self.width / 2)
                 self.value = self.min
