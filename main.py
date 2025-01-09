@@ -51,10 +51,14 @@ while run:
     )
     mass_slider.draw(screen)
     brightness_slider.draw(screen)
-    pg.display.flip()
 
     for event in pg.event.get():
+        mass_slider.update_value(event)
+        brightness_slider.update_value(event)
         if event.type == pg.QUIT:
             run = False
+
+    pg.display.flip()
+
 
 pg.quit()
