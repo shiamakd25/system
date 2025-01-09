@@ -28,6 +28,7 @@ class Slider:
         )
         self.value = 17
         self.title = title
+        self.dragging = False
 
     def draw(self, screen):
         slider_desc = FONT.render(
@@ -54,3 +55,23 @@ class Slider:
             slider_max,
             (self.pos[0] + 0.5 * self.width, self.pos[1] + 0.8 * self.height),
         )
+
+    def update_value(self, event):
+        if event.type == pg.MOUSEBUTTONDOWN:
+            if self.knob_bounding_box.collidepoint(event.pos):
+                self.dragging = True
+        else:
+            self.dragging = False
+
+        if event.type == pg.MOUSEMOTION and self.dragging:
+            mouse_x, _ = event.pos
+
+            if mouse_x < self.pos[0] - 0.5 * self.width:
+                setattr(self.knob_bounding_box, "left", self.pos[0] - self.width / 2)
+                self.value = self.min
+            elif mouse_x > self.pos[1] + 0.5 * self.width:
+                setattr(self.knob_bounding_box, "left", self.pos[0] + self.width / 2)
+                self.value = self.max
+            else:
+                setattr(self.knob_bounding_box, "left", mouse_x)
+                self.value = mouse_x
