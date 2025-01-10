@@ -15,7 +15,7 @@ mass_slider = Slider(
     (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 100),
     SLIDER_WIDTH,
     SLIDER_HEIGHT,
-    0,
+    1,
     300,
     "Star Mass (Solar Mass)",
 )
