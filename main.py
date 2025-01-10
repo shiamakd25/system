@@ -47,7 +47,7 @@ while run:
         screen,
         pg.Color(star.color),
         (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
-        (8 * math.sqrt(3 * star.mass)) / 3 + 40,
+        star.display_mass,
     )
     control_panel.fill((100, 100, 100))
     screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
