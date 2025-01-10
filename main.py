@@ -38,7 +38,7 @@ while run:
     screen.fill((0, 0, 0))
     pg.draw.circle(
         screen,
-        pg.Color(tuple(val * star.brightness / 120 for val in star.color)),
+        pg.Color(tuple(val * star.brightness / 350 for val in star.color)),
         (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
         4 * star.mass + star.brightness,
     )
