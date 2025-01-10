@@ -2,6 +2,7 @@ import pygame as pg
 from globals import *
 from star import *
 from ui import *
+import math
 
 pg.init()
 
@@ -46,7 +47,7 @@ while run:
         screen,
         pg.Color(star.color),
         (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
-        2 * star.mass,
+        (8 * math.sqrt(3 * star.mass)) / 3 + 40,
     )
     control_panel.fill((100, 100, 100))
     screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
