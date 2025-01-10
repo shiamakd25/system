@@ -29,28 +29,31 @@ brightness_slider = Slider(
     "Star Brightness (%)",
 )
 
-star = Star((255, 228, 0))
+slider_dict = {"mass": mass_slider, "brightness": brightness_slider}
+star = Star((255, 228, 0), slider_dict)
 
 run = True
 
 while run:
     screen.fill((0, 0, 0))
-    control_panel.fill((100, 100, 100))
-    screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
     pg.draw.circle(
         screen,
-        pg.Color(tuple(val * star.brightness / 100 for val in star.color)),
+        pg.Color(tuple(val * star.brightness / 120 for val in star.color)),
         (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
-        40 * star.mass + star.brightness,
+        4 * star.mass + star.brightness,
     )
     pg.draw.circle(
         screen,
         pg.Color(star.color),
         (DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2),
-        50 * star.mass,
+        2 * star.mass,
     )
+    control_panel.fill((100, 100, 100))
+    screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
     mass_slider.draw(screen)
     brightness_slider.draw(screen)
+
+    star.update_attr(slider_dict)
 
     for event in pg.event.get():
         mass_slider.update_value(event)
