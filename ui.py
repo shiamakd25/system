@@ -18,7 +18,7 @@ class Slider:
         self.rect = pg.Rect(pos[0] - width / 2, pos[1] - height / 2, width, height)
         self.min = min_val
         self.max = max_val
-        self.initial_val = (min_val + max_val) / 2
+        self.initial_val = int((min_val + max_val) / 2)
         self.knob_size = height * 1.3
         self.knob_bounding_box = pg.Rect(
             pos[0] - (self.knob_size / 2),
@@ -26,7 +26,7 @@ class Slider:
             self.knob_size,
             self.knob_size,
         )
-        self.value = 17
+        self.value = self.initial_val
         self.title = title
         self.dragging = False
 
@@ -66,11 +66,18 @@ class Slider:
         if event.type == pg.MOUSEMOTION and self.dragging:
             mouse_x, _ = event.pos
             if mouse_x < self.pos[0] - 0.5 * self.width:
-                setattr(self.knob_bounding_box, "left", self.pos[0] - self.width / 2)
+                setattr(self.knob_bounding_box, "centerx", self.pos[0] - self.width / 2)
                 self.value = self.min
-            elif mouse_x > self.pos[1] + 0.5 * self.width:
-                setattr(self.knob_bounding_box, "left", self.pos[0] + self.width / 2)
+            elif mouse_x > self.pos[0] + 0.5 * self.width:
+                setattr(self.knob_bounding_box, "centerx", self.pos[0] + self.width / 2)
                 self.value = self.max
-            else:
-                setattr(self.knob_bounding_box, "left", mouse_x)
-                self.value = mouse_x
+            elif (
+                self.pos[0] - 0.5 * self.width
+                < mouse_x
+                < self.pos[0] + 0.5 * self.width
+            ):
+                setattr(self.knob_bounding_box, "centerx", mouse_x)
+                self.value = int(
+                    ((self.knob_bounding_box.centerx - self.rect.left) / self.width)
+                    * (self.max - self.min)
+                )
