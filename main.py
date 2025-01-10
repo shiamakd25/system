@@ -37,6 +37,7 @@ run = True
 
 while run:
     screen.fill((0, 0, 0))
+    print(f"Star mass: {star.mass}, Star display mass: {star.display_mass}")
     pg.draw.circle(
         screen,
         pg.Color(tuple(val * star.brightness / 350 for val in star.color)),

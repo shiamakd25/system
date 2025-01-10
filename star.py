@@ -11,4 +11,5 @@ class Star:
 
     def update_attr(self, slider_dict):
         self.mass = slider_dict["mass"].value
+        self.display_mass = (8 * math.sqrt(3 * self.mass)) / 3 + 40
         self.brightness = slider_dict["brightness"].value
