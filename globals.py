@@ -15,4 +15,5 @@ CONTROL_PANEL_HEIGHT = SCREEN_HEIGHT
 SLIDER_WIDTH = 225
 SLIDER_HEIGHT = 25
 
-FONT = pg.font.SysFont(None, 24)
+DESC_FONT = pg.font.SysFont(None, 24)
+BUTTON_FONT = pg.font.SysFont(None, 64)
