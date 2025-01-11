@@ -31,26 +31,24 @@ class Slider:
         self.dragging = False
 
     def draw(self, screen):
-        slider_desc = DESC_FONT.render(
-            f"{self.title}: {self.value}", True, pg.Color(0, 0, 0)
-        )
+        slider_desc = DESC_FONT.render(f"{self.title}: {self.value}", True, BLACK)
         screen.blit(
             slider_desc,
             (self.pos[0] - 0.5 * self.width, self.pos[1] - 1.5 * self.height),
         )
-        pg.draw.rect(screen, pg.Color(255, 255, 255), self.rect)
+        pg.draw.rect(screen, WHITE, self.rect)
         pg.draw.circle(
             screen,
             pg.Color(50, 50, 50),
             self.knob_bounding_box.center,
             self.knob_size / 2,
         )
-        slider_min = DESC_FONT.render(str(self.min), True, pg.Color(0, 0, 0))
+        slider_min = DESC_FONT.render(str(self.min), True, BLACK)
         screen.blit(
             slider_min,
             (self.pos[0] - 0.5 * self.width, self.pos[1] + 0.8 * self.height),
         )
-        slider_max = DESC_FONT.render(str(self.max), True, pg.Color(0, 0, 0))
+        slider_max = DESC_FONT.render(str(self.max), True, BLACK)
         screen.blit(
             slider_max,
             (self.pos[0] + 0.5 * self.width, self.pos[1] + 0.8 * self.height),
@@ -94,10 +92,9 @@ class DropdownButton:
 
     def draw(self, screen):
         pg.draw.rect(screen, pg.Color(0, 0, 0, 255), self.rect)
-        button_text = BUTTON_FONT.render(self.text, True, pg.Color(255, 255, 255))
+        button_text = BUTTON_FONT.render(self.text, True, WHITE)
         screen.blit(button_text, self.rect.topleft)
 
     def click(self, event):
         if event.type == pg.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
             self.clicked = not self.clicked
-        print(self.clicked)

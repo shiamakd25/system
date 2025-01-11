@@ -61,7 +61,7 @@ planet = Planet((255, 0, 225), planet_slider_dict)
 run = True
 
 while run:
-    screen.fill((0, 0, 0))  # Fill in screen
+    screen.fill(BLACK)  # Fill in screen
 
     # Draw Starlight
     pg.draw.circle(
@@ -88,7 +88,7 @@ while run:
     )
 
     # Add Control Panel
-    control_panel.fill((100, 100, 100))
+    control_panel.fill(GRAY)
     screen.blit(control_panel, (SCREEN_WIDTH - CONTROL_PANEL_WIDTH, 0))
 
     # Add Control Panel elements
