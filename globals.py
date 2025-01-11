@@ -17,3 +17,6 @@ SLIDER_HEIGHT = 25
 
 DESC_FONT = pg.font.SysFont(None, 24)
 BUTTON_FONT = pg.font.SysFont(None, 64)
+
+BLACK = pg.Color(0, 0, 0)
+WHITE = pg.Color(255, 255, 255)
