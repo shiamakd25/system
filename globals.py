@@ -20,3 +20,4 @@ BUTTON_FONT = pg.font.SysFont(None, 64)
 
 BLACK = pg.Color(0, 0, 0)
 WHITE = pg.Color(255, 255, 255)
+GRAY = pg.Color(100, 100, 100)
