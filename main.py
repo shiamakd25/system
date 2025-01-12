@@ -36,7 +36,7 @@ p_mass_slider = Slider(
     SLIDER_WIDTH,
     SLIDER_HEIGHT,
     1,
-    300,
+    50,
     "Planet Mass",
 )
 
@@ -44,8 +44,8 @@ p_dist_slider = Slider(
     (SCREEN_WIDTH - (CONTROL_PANEL_WIDTH / 2), 370),
     SLIDER_WIDTH,
     SLIDER_HEIGHT,
-    0,
     100,
+    300,
     "Distance from Star",
 )
 

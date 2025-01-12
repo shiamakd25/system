@@ -78,6 +78,7 @@ class Slider:
                 self.value = int(
                     ((self.knob_bounding_box.centerx - self.rect.left) / self.width)
                     * (self.max - self.min)
+                    + self.min
                 )
 
 
