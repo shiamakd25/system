@@ -3,6 +3,7 @@ from globals import *
 from star import *
 from planet import *
 from ui import *
+import time
 
 pg.init()
 
@@ -59,6 +60,7 @@ planet = Planet((255, 0, 225), planet_slider_dict)
 
 # Main Loop
 run = True
+theta = 0
 
 while run:
     screen.fill(BLACK)  # Fill in screen
@@ -83,7 +85,7 @@ while run:
     pg.draw.circle(
         screen,
         pg.Color(planet.color),
-        (DISPLAY_WIDTH / 2 + planet.distance, DISPLAY_HEIGHT / 2 + planet.distance),
+        (planet.x, planet.y),
         planet.display_mass * 0.25,
     )
 
@@ -96,6 +98,9 @@ while run:
     brightness_slider.draw(screen)
     p_mass_slider.draw(screen)
     p_dist_slider.draw(screen)
+
+    planet.orbit(theta)
+    theta += 0.001
 
     # Update object attributes
     star.update_attr(star_slider_dict)
@@ -111,7 +116,6 @@ while run:
         # Close Window
         if event.type == pg.QUIT:
             run = False
-
     pg.display.flip()
 
 
