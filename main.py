@@ -84,7 +84,7 @@ while run:
         screen,
         pg.Color(planet.color),
         (DISPLAY_WIDTH / 2 + planet.distance, DISPLAY_HEIGHT / 2 + planet.distance),
-        planet.display_mass,
+        planet.display_mass * 0.25,
     )
 
     # Add Control Panel
