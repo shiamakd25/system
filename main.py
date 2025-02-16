@@ -56,7 +56,7 @@ star_slider_dict = {"mass": mass_slider, "brightness": brightness_slider}
 star = Star((255, 228, 0), star_slider_dict)
 
 planet_slider_dict = {"mass": p_mass_slider, "distance": p_dist_slider}
-planet = Planet((255, 0, 225), planet_slider_dict)
+planet = Planet((40, 117, 49), planet_slider_dict)
 
 # Main Loop
 run = True
@@ -99,6 +99,7 @@ while run:
     p_mass_slider.draw(screen)
     p_dist_slider.draw(screen)
 
+    # Orbit planet
     planet.orbit(theta)
     theta += 0.001
 
